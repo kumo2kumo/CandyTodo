@@ -36,8 +36,8 @@ class Task extends Model
         return self::STATUS[$status]['class'];
     }
     //日付表示を/に変える
-    public function getFormatDueDateAttribute()
+    public function getFormattedDueDateAttribute()
     {
-        return Carbon::createFromFormat('y-m-d', $this->attribute['due_date'])->format('y/m/d');
+        return Carbon::createFromFormat('Y-m-d', $this->attributes['due_date'])->format('Y/m/d');
     }
 }
