@@ -20,6 +20,11 @@ Route::get('/', function () {
 });
 
 Route::get('/folders/{id}/tasks', 'TaskController@index')->name('tasks.index');
+//新規タスク追加
+Route::get('/folders/{id}/tasks/create', 'TaskController@showCreateForm')->name('tasks.create');
+Route::post('/folders/{id}/tasks/create', 'TaskController@create');
 
+
+//新規フォルダ追加
 Route::get('/folders/create', 'FolderController@showCreateForm')->name('folders.create');
 Route::post('/folders/create', 'FolderController@create');
