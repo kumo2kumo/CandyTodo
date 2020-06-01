@@ -31,7 +31,7 @@ class TaskController extends Controller
         return view('tasks.create', ['folder_id' => $id]);
     }
 
-    public function  create(int $id, CreateTask $request)
+    public function create(int $id, CreateTask $request)
     {
         $current_folder = Folder::find($id);
 
