@@ -41,10 +41,10 @@ class TaskTest extends TestCase
         ]);
     }
 
-    /**
-     * 期限日が過去日付の場合はバリデーションエラー
-     * @test
-     */
+    // /**
+    //  * 期限日が過去日付の場合はバリデーションエラー
+    //  * @test
+    //  */
     public function due_date_should_not_be_past()
     {
         $response = $this->post('/folders/1/tasks/create', [
@@ -54,6 +54,23 @@ class TaskTest extends TestCase
 
         $response->assertSessionHasErrors([
             'due_date' => '過去だからブー',
+        ]);
+    }
+
+    //状態が定義された値でない場合エラー
+    //* @test //
+    public function status_should_be_within_defined_numbers()
+    {
+        $this->seed('TasksTableSeeder');
+
+        $response = $this->post('/folders/1/tasks/1/edit', [
+            'title' => 'sample task',
+            'due_date' => Carbon::today()->format('Y/m/d'),
+            'status' => 999,
+        ]);
+
+        $response->assertSessionHasErrors([
+            'status' => '状態にはどれかを入れてちょ',
         ]);
     }
 }
