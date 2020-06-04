@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Auth::routes(['register' => true]);
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/folders/{id}/tasks', 'TaskController@index')->name('tasks.index');
 // 新規タスク追加
