@@ -22,7 +22,7 @@
           </div>
           @endif
 
-          <form method="POST" action="{{ route('tasks.create',['id' => $folder_id]) }}">
+          <form method="POST" action="{{ route('tasks.create',['folder' => $folder_id]) }}">
             @csrf
             <div class="form-group">
               <label for="title">タスク名</label>
