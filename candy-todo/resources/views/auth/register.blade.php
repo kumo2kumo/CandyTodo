@@ -5,10 +5,10 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-8">
-      <div class="card">
-        <div class="card-header">会員登録</div>
+      <div class="panel">
+        <div class="panel-header">会員登録</div>
 
-        <div class="card-body">
+        <div class="panel-body">
           @if($errors->any())
           <div class="alert alert-danger">
             @foreach($errors as $error)
