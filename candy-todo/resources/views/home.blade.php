@@ -8,7 +8,8 @@
         <div class="panel-heading">フォルダをまず作成してちょ</div>
         <div class="panel-body">
           <div class="text-center">
-            <a href="{{ route('folders.create') }"class="btn btn-primary">フォルダ新規作成
+            <a href="{{ route('folders.create') }}" class="btn btn-primary">
+              フォルダ作成ページへ
             </a>
           </div>
         </div>
